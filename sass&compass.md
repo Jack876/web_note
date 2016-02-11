@@ -71,3 +71,76 @@ button {
 	@include border-radius(5px);
 }
 ```
+
+###### ·多个参数的混合宏
+```
+@mixin center($width,$height){
+	width: $width;
+	height: $height;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -($height) / 2;
+	margin-left: -($width) / 2;
+}
+```
+
+调用
+```
+div {
+	@include center;
+}
+```
+> 混合宏的缺点是会造成过多冗余的代码，sass不会智能合并
+
+###### ·继承
+```
+.btn {
+	border: 1px solid #ccc;
+	padding: 6px 10px;
+	font-size: 14px;
+}
+
+.btn-primary {
+	background-color: #f36;
+	color: #fff;
+	@extend .btn; //继承.btn所有属性
+}
+```
+
+###### ·占位符%
+```
+%mt5 { margin-top: 5px; }
+%pt5{ padding-top: 5px; }
+
+.btn {
+	@extend %mt5;
+	@extend %pt5;
+}
+
+.block {
+@extend %mt5;
+	span {
+		@extend %pt5;
+	}
+}
+
+```
+输出结果：
+```
+.btn, .block { margin-top: 5px; }
+.btn, .block span { padding-top: 5px; }
+```
+> %placeholder 声明的代码，如果不被 @extend 调用的话，不会产生任何代码。与$不同的是它可以合并代码。
+
+###### ·混合宏 VS 继承 VS 占位符
+- 如果你的代码块中涉及到变量，建议使用混合宏来创建相同的代码块；
+- 如果不需要任何参数，且有一个基类已在文件中存在，那么建议使用 Sass 的继承。
+
+###### ·注释
+//不会被编译，/**/会被编译
+
+###### ·运算
+- 被乘除数后不能加单位；
+- 减号前面要加空格，除号/要在公式外加括号（）；
+- 复杂的公式同正常数学一样用（）表明先后

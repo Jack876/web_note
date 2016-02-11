@@ -1,8 +1,8 @@
-### 安装、使用sass&compass
+## 安装、使用sass&compass
 
 
 
-## 安装
+#### 安装
 > 使用cmd命令前先安装[ruby(windows版)](http://rubyinstaller.org/downloads/)
 
 cmd命令|说明

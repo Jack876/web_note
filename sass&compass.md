@@ -44,7 +44,7 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 
 ###### ·语法嵌套
 
-```
+```sass
 a {
   	Color：red;
       	&:before {
@@ -57,7 +57,7 @@ a {
 ```
 
 ###### ·声明混合宏
-```
+```sass
 @mixin border-radius($radius) {
 	-webkit-border-radius:$radius;
 	border-radius:$radius;
@@ -66,14 +66,14 @@ a {
 > $radius也可以给一个默认值，如@mixin border-radius($radius:50%)
 
 调用混合宏
-```
+```sass
 button {
 	@include border-radius(5px);
 }
 ```
 
 ###### ·多个参数的混合宏
-```
+```sass
 @mixin center($width,$height){
 	width: $width;
 	height: $height;
@@ -86,7 +86,7 @@ button {
 ```
 
 调用
-```
+```sass
 div {
 	@include center;
 }
@@ -94,7 +94,7 @@ div {
 > 混合宏的缺点是会造成过多冗余的代码，sass不会智能合并
 
 ###### ·继承
-```
+```sass
 .btn {
 	border: 1px solid #ccc;
 	padding: 6px 10px;
@@ -109,7 +109,7 @@ div {
 ```
 
 ###### ·占位符%
-```
+```sass
 %mt5 { margin-top: 5px; }
 %pt5{ padding-top: 5px; }
 
@@ -127,7 +127,7 @@ div {
 
 ```
 输出结果：
-```
+```css
 .btn, .block { margin-top: 5px; }
 .btn, .block span { padding-top: 5px; }
 ```

@@ -33,14 +33,17 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 
 
 * 声明变量
+
 `$width:500px;`
 
 * 声明默认变量
+
 `$width:500px !default;`
 
 > 默认变量用来设置默认变量，根据需求覆盖，覆盖时重新声明默认变量即可
 
 * 语法嵌套
+
 `a {
   	Color：red;
       	&:before {
@@ -50,13 +53,3 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 		Color:blue;
   	}
 }`
-
-	a {
-	  	Color：red;
-	      	&:before {
-	     	Content:””
-	  	}
-	  	Body & {
-			Color:blue;
-	  	}
-	}

@@ -18,7 +18,9 @@ gem install compass | 安装[compass](http://compass-style.org/reference/compass
 gem install compass-normalize | 安装normalize插件（sass语法增强）	
 
 
-## 使用
+
+
+#### 使用
 > 指定目录下打开cmd窗口使用指令
 
 cmd指令 | 说明
@@ -26,4 +28,4 @@ cmd指令 | 说明
 compass create 文件名 | 在指定文件夹创建compass目录
 sass main.cscc main.css | 转译scss文件（scss/sass文件目录下使用）
 compass watch | 实时监听scss文件，自动转译（compass根目录下）
-compass compile | 输出css,配置在config.rb中output\_style（例压缩模式：13行中添加如output_style = :compressed）
+compass compile | 输出css,配置在config.rb中（例压缩模式：13行中添加output_style = :compressed）

@@ -20,7 +20,7 @@ gem install compass-normalize | 安装normalize插件（sass语法增强）
 #### 使用
 > 指定目录下打开cmd窗口使用指令。
 
-windows系统写代码过程转译会有乱码或报错的情况，找到engine.rb文件（一般位于Ruby22\lib\ruby\gems\2.2.0\gems\sass-3.4.18\lib\sass目录下面），在所有的require后面新增如下代码：'Encoding.default_external = Encoding.find('utf-8')'
+windows系统写代码过程转译会有乱码或报错的情况，找到engine.rb文件（一般位于Ruby22\lib\ruby\gems\2.2.0\gems\sass-3.4.18\lib\sass目录下面），在所有的require后面新增如下代码：**Encoding.default_external = Encoding.find('utf-8')**
 
 cmd指令 | 说明
 -----|-----

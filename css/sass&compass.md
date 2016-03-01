@@ -1,7 +1,25 @@
-## 安装、使用sass&compass
+###目录
+- [安装、使用sass&compass](#安装、使用sass&compass)
+	+ [安装](#安装)
+	+ [使用](#使用)
+
+- [sass常用语法](#sass常用语法)
+	+ [声明变量](#声明变量)
+	+ [语法嵌套](#语法嵌套)
+	+ [声明混合宏](#声明混合宏)
+	+ [继承](#继承)
+	+ [占位符%](#占位符%)
+	+ [注意事项](#混合宏 VS 继承 VS 占位符)
+
+- [视频教程]()
+	+ [sass(1小时33分)](http://www.imooc.com/learn/364)
+	+ [compass(2小时41分)](http://www.imooc.com/learn/371)
 
 
-#### 安装
+<h2 id="安装、使用sass&compass">安装、使用sass&compass</h2> 
+
+
+<h4 id="安装">安装</h4> 
 > 使用cmd指令前先安装[ruby(windows版)](http://rubyinstaller.org/downloads/)
 
 cmd指令|说明
@@ -17,7 +35,7 @@ gem install compass | 安装[compass](http://compass-style.org/reference/compass
 gem install compass-normalize | 安装normalize插件（sass语法增强）	
 
 
-#### 使用
+<h4 id="使用">使用</h4> 
 > 指定目录下打开cmd窗口使用指令。
 
 windows系统写代码过程转译会有乱码或报错的情况，找到engine.rb文件（一般位于Ruby22\lib\ruby\gems\2.2.0\gems\sass-3.4.18\lib\sass目录下面），在所有的require后面新增如下代码：**Encoding.default_external = Encoding.find('utf-8')**
@@ -31,17 +49,17 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 
 
 ---
-## sass常用语法
+<h2 id="sass常用语法">sass常用语法</h2> 
 
 
-###### ·声明变量
+<h6 id="声明变量"> ·声明变量</h6>
 
 ```sass
 $width:500px;
 ```	  
 
 
-###### ·声明默认变量
+<h6 id="声明默认变量"> ·声明默认变量</h6>
 
 ```sass
 $width:500px !default;
@@ -50,7 +68,7 @@ $width:500px !default;
 > 默认变量用来设置默认变量，根据需求覆盖，覆盖时重新声明默认变量即可	  
 
 
-###### ·语法嵌套
+<h6 id="语法嵌套"> ·语法嵌套</h6>
 
 ```sass
 a {
@@ -65,7 +83,7 @@ a {
 ```	  
 
 
-###### ·声明混合宏
+<h6 id="声明混合宏"> ·声明混合宏</h6>
 ```sass
 @mixin border-radius($radius) {
 	-webkit-border-radius:$radius;
@@ -82,7 +100,7 @@ button {
 ```	  
 
 
-###### ·多个参数的混合宏
+<h6 id="多个参数的混合宏"> ·多个参数的混合宏</h6>
 ```sass
 @mixin center($width,$height){
 	width: $width;
@@ -104,7 +122,7 @@ div {
 > 混合宏的缺点是会造成过多冗余的代码，sass不会智能合并  
 
 
-###### ·继承
+<h6 id="继承"> ·继承</h6>
 ```sass
 .btn {
 	border: 1px solid #ccc;
@@ -120,7 +138,7 @@ div {
 ```	  
 
 
-###### ·占位符%
+<h6 id="占位符%"> ·占位符%</h6>
 ```sass
 %mt5 { margin-top: 5px; }
 %pt5{ padding-top: 5px; }
@@ -146,16 +164,16 @@ div {
 > %placeholder 声明的代码，如果不被 @extend 调用的话，不会产生任何代码。与$不同的是它可以合并代码。  	  
 
 
-###### ·混合宏 VS 继承 VS 占位符
+<h6 id="混合宏 VS 继承 VS 占位符"> ·混合宏 VS 继承 VS 占位符</h6>
 - 如果你的代码块中涉及到变量，建议使用混合宏来创建相同的代码块；
 - 如果不需要任何参数，且有一个基类已在文件中存在，那么建议使用 Sass 的继承。  	  
 
 
-###### ·注释
+<h6 id="注释"> ·注释</h6>
 //不会被编译，/**/会被编译  	  
 	
 
-###### ·运算
+<h6 id="运算"> ·运算</h6>
 - 被乘除数后不能加单位；
 - 减号前面要加空格，除号/要在公式外加括号（）；
 - 复杂的公式同正常数学一样用（）表明先后  

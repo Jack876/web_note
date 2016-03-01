@@ -1,4 +1,4 @@
-###目录
+**`目录`**
 - [安装、使用sass&compass](#安装、使用sass&compass)
 	+ [安装](#安装)
 	+ [使用](#使用)
@@ -15,6 +15,7 @@
 	+ [sass(1小时33分)](http://www.imooc.com/learn/364)
 	+ [compass(2小时41分)](http://www.imooc.com/learn/371)
 
+---
 
 <h2 id="安装、使用sass&compass">安装、使用sass&compass</h2> 
 

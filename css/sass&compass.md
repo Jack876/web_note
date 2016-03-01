@@ -11,6 +11,10 @@
 	+ [占位符%](#占位符%)
 	+ [注意事项](#混合宏 VS 继承 VS 占位符)
 
+- [视频教程]()
+	+ [sass(1小时33分)](http://www.imooc.com/learn/364)
+	+ [compass(2小时41分)](http://www.imooc.com/learn/371)
+
 
 <h2 id="安装、使用sass&compass">安装、使用sass&compass</h2> 
 

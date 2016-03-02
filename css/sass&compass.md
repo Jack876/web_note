@@ -36,6 +36,7 @@ gem uninstall sass --version=3.3.0 | 删除指定版本sass
 gem install compass | 安装[compass](http://compass-style.org/reference/compass/)
 gem install compass-normalize | 安装normalize插件（sass语法增强）	
 
+<br>
 
 <h4 id="使用">使用</h4> 
 > 指定目录下打开cmd窗口使用指令。
@@ -59,6 +60,7 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 ```sass
 $width:500px;
 ```	  
+<br>
 
 
 <h6 id="声明默认变量"> ·声明默认变量</h6>
@@ -69,6 +71,7 @@ $width:500px !default;
 
 > 默认变量用来设置默认变量，根据需求覆盖，覆盖时重新声明默认变量即可	  
 
+<br>
 
 <h6 id="语法嵌套"> ·语法嵌套</h6>
 
@@ -83,6 +86,7 @@ a {
   	}
 }
 ```	  
+<br>
 
 
 <h6 id="声明混合宏"> ·声明混合宏</h6>
@@ -100,6 +104,7 @@ button {
 	@include border-radius(5px);
 }
 ```	  
+<br>
 
 
 <h6 id="多个参数的混合宏"> ·多个参数的混合宏</h6>
@@ -123,6 +128,8 @@ div {
 ```
 > 混合宏的缺点是会造成过多冗余的代码，sass不会智能合并  
 
+<br>
+
 
 <h6 id="继承"> ·继承</h6>
 ```sass
@@ -138,6 +145,7 @@ div {
 	@extend .btn; //继承.btn所有属性
 }
 ```	  
+<br>
 
 
 <h6 id="占位符%"> ·占位符%</h6>
@@ -165,14 +173,20 @@ div {
 ```
 > %placeholder 声明的代码，如果不被 @extend 调用的话，不会产生任何代码。与$不同的是它可以合并代码。  	  
 
+<br>
+
 
 <h6 id="混合宏 VS 继承 VS 占位符"> ·混合宏 VS 继承 VS 占位符</h6>
 - 如果你的代码块中涉及到变量，建议使用混合宏来创建相同的代码块；
 - 如果不需要任何参数，且有一个基类已在文件中存在，那么建议使用 Sass 的继承。  	  
 
+<br>
+
 
 <h6 id="注释"> ·注释</h6>
 //不会被编译，/**/会被编译  	  
+
+<br>
 	
 
 <h6 id="运算"> ·运算</h6>

@@ -15,6 +15,8 @@
 	+ [自动跳转刷新](#自动跳转刷新)
 	+ [去除代码缓存](#去除代码缓存)
 
+---
+
 <h3 id="移动端">移动端</h3>
 
 <h6 id="移动端禁止缩放"> ·移动端禁止缩放</h6>
@@ -29,6 +31,8 @@
  user-scalable：用户是否可以手动缩放。 
  有emmet插件的编辑器内简写"meta:vp"加tab键。
 
+<br>
+
 <h6 id="禁止字符转链接"> ·禁止字符转链接</h6>
 ```html
 <!-->不识别手机号<-->
@@ -36,6 +40,7 @@
 <!-->不识别邮箱<-->
 <meta name="format-detection" content="email=no">
 ```
+<br>
 
 <h6 id="webApp设置"> ·webApp设置</h6>
 ```html
@@ -56,6 +61,7 @@
 <!-->webApp的启动界面，尺寸320x640<-->
 <link rel="apple-touch-startup-image" href="webApp/startup.png" />
 ```
+<br>
 
 <h3 id="pc端">pc端</h3>
 
@@ -65,17 +71,22 @@
 ```
 > 使用最高版本的ie内核进行渲染。
 
+<br>
+
 <h6 id="网页标题栏icon"> ·网页标题栏icon</h6>
 ```html
 <link rel="short icon" style="image/x-icon" href="logo.ico">
 ```
 > [在线ico转换工具](http://www.ico.la/)
 
+<br>
+
 <h6 id="seo关键字&描述"> ·seo关键字&描述</h6>
 ```html
 <meta name="keywords" content="搜索关键词1，关键词2（5个左右）">
 <meta name="description" content="网页描述文字（150字左右）">
 ```
+<br>
 
 <h6 id="判断ie版本"> ·判断ie版本</h6>
 ```html
@@ -89,6 +100,8 @@
  gt :大于;
  ! :不等于。
 
+<br>
+
 <h3 id="通用">通用</h3>
 
 <h6 id="自动跳转刷新"> ·自动跳转刷新</h6>
@@ -97,6 +110,8 @@
 <meta http-equiv="refresh" content="10">
 ```
 > 10为秒数设置
+
+<br>
 
 <h6 id="去除代码缓存"> ·去除代码缓存</h6>
 ```html

@@ -41,11 +41,13 @@
 ```css
 	p { text-indext:24px; }
 ```
+<br>
 
 <h6 id="首字下沉"> ·首字下沉</h6>
 ```css
 	p:first-letter { float:left; }
 ```
+<br>
 
 <h6 id="文字，字符间距"> ·文字，字符间距</h6>
 ```css
@@ -58,6 +60,7 @@
 		white-space: pre-line;			//忽略多个空格为1个，保留回车
 	}
 ```
+<br>
 
 <h6 id="文本溢出"> ·文本溢出(单行)</h6>
 ```css
@@ -67,6 +70,7 @@
 		overflow: ellipsis; 			//使用省略号
 	}				
 ```
+<br>
 
 <h6 id="文本溢出2"> ·文本溢出(多行)</h6>
 ```css
@@ -77,6 +81,7 @@
 		-webkit-box-orient: vertical; 	//设置伸缩盒对象的子元素的排列方式
 	}		
 ```
+<br>
 
 <h6 id="禁止选中文本"> ·禁止选中文本</h6>
 ```css
@@ -84,6 +89,7 @@
 		-webkit-user-select:none;
 	}
 ```
+<br>
 
 <h3 id="2.边框与图片"> 2.边框与图片</h3>
 
@@ -97,9 +103,11 @@
 	  background: image-set(url(image-normal.png) 1x,url(image-ritina.png) 2x) center;
 	}
 ```
+<br>
 
 <h6 id="图片加载优化"> ·图片加载优化</h6>
 除base64格式外，多用jpg，大图尽量避免png，相对jpg解析速度快。
+<br>
 
 <h6 id="图片虚化"> ·图片虚化</h6>
 ```css
@@ -108,6 +116,7 @@
 		filter: blur(3px);
 	}
 ```
+<br>
 
 <h6 id="图片lomo效果"> ·图片lomo效果</h6>
 ```css
@@ -148,6 +157,7 @@ html代码
     	<img src="image.jpg">
     </figure>
 ```
+<br>
 
 <h3 id="3.按钮与链接"> 3.按钮与链接</h3>
 
@@ -156,6 +166,7 @@ html代码
 - 增大可点击范围（40px）
 - 增大页面和内容块的外边距
 - 增加表单输入框的大小和间距
+<br>
 
 <h3 id="4.背景与颜色"> 4.背景与颜色</h3>
 
@@ -163,6 +174,7 @@ html代码
 ```css
 	div { clip-path: url("#cp"); } 		//#cp为svg
 ```
+<br>
 
 <h3 id="5.变化与动画"> 5.变化与动画</h3>
 
@@ -170,6 +182,7 @@ html代码
 ```css
 	div{ -webkit-overflow-scrolling : touch; }
 ```
+<br>
 
 <h6 id="动画特效加速"> ·动画特效加速（适当用）</h6>
 ```css
@@ -180,6 +193,7 @@ html代码
 		transform: translate3d(0, 0, 0);
 	}
 ```
+<br>
 
 <h3 id="6.页面与布局">6.页面与布局</h3> 
 
@@ -196,11 +210,14 @@ html代码
 ```
 > 该class加在父元素上即可
 
+<br>
+
 <h6 id="表格防止溢出"> ·表格防止溢出</h6>
 ```css
 	table { table-layout:fixed; }
 	td { word-break: break-all; }
 ```
+<br>
 
 <h6 id="定位底部footer"> ·定位底部footer</h6>
 ```css
@@ -216,6 +233,7 @@ html代码
 		height: 150px; 
 	}
 ```
+<br>
 
 <h6 id="ios端fixed属性BUG解决方案"> ·ios端fixed属性BUG解决方案</h6>
 ```css
@@ -228,6 +246,7 @@ html代码
 		-webkit-overflow-scrolling : touch;
 	}
 ```
+<br>
 
 <h3 id="7.美化与装饰"> 7.美化与装饰</h3>
 

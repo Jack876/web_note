@@ -27,6 +27,8 @@
 	+ [忽略特殊文件](#忽略特殊文件)
 	+ [配置别名](#配置别名)
 
+---
+
 <h3 id="基本操作">1.基本操作</h3>
 
 <h6 id="安装git" >安装git</h6>
@@ -152,11 +154,17 @@
 > 登陆GitHub，用户设置-SSH Keys页面，自定义title，Key文本框里粘贴id_rsa.pub
 
 <h6 id="添加远程库">添加远程库</h6>
+> 登陆GitHub，右上角-Create a new repo，输入name创建一个新的仓库
+
 <table>
 	<tbody>
 		<tr>
-			<td></td>
-			<td></td>
+			<td>git remote add origin git@github.com:Gil2015/learngit.git</td>
+			<td>关联远程库，远程库名字origin，也可以改成别的</td>
+		</tr>
+		<tr>
+			<td>git push -u origin master</td>
+			<td>本地库内容推送到远程库，-u以后可以不加</td>
 		</tr>
 	</tbody>
 </table>

@@ -1,19 +1,19 @@
 **`目录`**
 
 - [移动端](#移动端)
-	+[移动端禁止缩放](#移动端禁止缩放)
-	+[禁止字符转链接](#禁止字符转链接)
-	+[webApp设置](#webApp设置)
+	+ [移动端禁止缩放](#移动端禁止缩放)
+	+ [禁止字符转链接](#禁止字符转链接)
+	+ [webApp设置](#webApp设置)
 
 - [pc端](#pc端)
-	+[指定浏览器内核渲染](#指定浏览器内核渲染)
-	+[网页标题栏icon](#网页标题栏icon)
-	+[seo关键字&描述](#seo关键字&描述)
-	+[判断ie版本](#判断ie版本)
+	+ [指定浏览器内核渲染](#指定浏览器内核渲染)
+	+ [网页标题栏icon](#网页标题栏icon)
+	+ [seo关键字&描述](#seo关键字&描述)
+	+ [判断ie版本](#判断ie版本)
 
 - [通用](#通用)
-	+[自动跳转刷新](#自动跳转刷新)
-	+[去除代码缓存](#去除代码缓存)
+	+ [自动跳转刷新](#自动跳转刷新)
+	+ [去除代码缓存](#去除代码缓存)
 
 <h3 id="移动端">移动端</h3>
 
@@ -22,12 +22,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 ```
 > width：viewport的宽度; 
-height：viewport的高度;   
-initial-scale：初始的缩放比例;
-minimum-scale：允许用户缩放到的最小比例;   
-maximum-scale：允许用户缩放到的最大比例;  
-user-scalable：用户是否可以手动缩放。 
-有emmet插件的编辑器内简写"meta:vp"加tab键。
+ height：viewport的高度;   
+ initial-scale：初始的缩放比例;
+ minimum-scale：允许用户缩放到的最小比例;   
+ maximum-scale：允许用户缩放到的最大比例;  
+ user-scalable：用户是否可以手动缩放。 
+ 有emmet插件的编辑器内简写"meta:vp"加tab键。
 
 <h6 id="禁止字符转链接">禁止字符转链接</h6>
 ```html
@@ -83,11 +83,11 @@ user-scalable：用户是否可以手动缩放。
 	do something
 <![endif]-->
 ```
->lte：小于或等于;
-lt ：小于;
-gte：大于或等于;
-gt ：大于;
-! ： 不等于。
+>lte:小于或等于;
+ lt :小于;
+ gte:大于或等于;
+ gt :大于;
+ ! :不等于。
 
 <h3 id="通用">通用</h3>
 

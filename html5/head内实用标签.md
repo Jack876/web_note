@@ -67,7 +67,7 @@
 
 <h6 id="网页标题栏icon">网页标题栏icon</h6>
 ```html
-	<link rel="short icon" style="image/x-icon" href="logo.ico">
+<link rel="short icon" style="image/x-icon" href="logo.ico">
 ```
 > [在线ico转换工具](http://www.ico.la/)
 

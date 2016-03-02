@@ -5,6 +5,8 @@
 	+ [sass&compass](https://github.com/Gil2015/web_note/blob/master/css/sass%26compass.md)
 - [html5](https://github.com/Gil2015/web_note/tree/master/html5)
 	+ [head内实用标签](https://github.com/Gil2015/web_note/blob/master/html5/head%E5%86%85%E5%AE%9E%E7%94%A8%E6%A0%87%E7%AD%BE.md)
-- [tools]()
+- [tools](https://github.com/Gil2015/web_note/tree/master/tools)
+	+ [git指令](https://github.com/Gil2015/web_note/blob/master/tools/git%E6%8C%87%E4%BB%A4.md)
 
-- [web]()
+- [web](https://github.com/Gil2015/web_note/tree/master/web)
+	+ [常用网站](https://github.com/Gil2015/web_note/blob/master/web/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99.md)

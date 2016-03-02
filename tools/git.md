@@ -30,13 +30,13 @@
 <h3 id="基本操作">1.基本操作</h3>
 
 <h6 id="安装git" >安装git</h6>
-<table>
-	<tbody>
-		<tr>
+<table width="100%">
+	<tbody width="100%">
+		<tr width="100%">
 			<td>git config --global user.name "Your Name"</td>
 			<td>设置用户名</td>
 		</tr>
-		<tr>
+		<tr width="100%">
 			<td>git config --global user.email "email@example.com"</td>
 			<td>设置邮箱</td>
 		</tr>

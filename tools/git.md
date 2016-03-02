@@ -35,6 +35,8 @@
 git config --global user.name "Your Name" | 设置用户名
 git config --global user.email "email@example.com" | 设置邮箱 
 
+<br>
+<br>
 <h6 id="创建版本库">创建版本库</h6>
 
 <h6 id="检索">检索</h6>

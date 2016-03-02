@@ -1,7 +1,21 @@
 **`目录`**
 
+- [移动端](#移动端)
+	+[移动端禁止缩放](#移动端禁止缩放)
+	+[禁止字符转链接](#禁止字符转链接)
+	+[webApp设置](#webApp设置)
 
-<h3 id="pc端">移动端</h3>
+- [pc端](#pc端)
+	+[指定浏览器内核渲染](#指定浏览器内核渲染)
+	+[网页标题栏icon](#网页标题栏icon)
+	+[seo关键字&描述](#seo关键字&描述)
+	+[判断ie版本](#判断ie版本)
+
+- [通用](#通用)
+	+[自动跳转刷新](#自动跳转刷新)
+	+[去除代码缓存](#去除代码缓存)
+
+<h3 id="移动端">移动端</h3>
 
 <h6 id="移动端禁止缩放">移动端禁止缩放</h6>
 ```html
@@ -15,7 +29,7 @@ maximum-scale：允许用户缩放到的最大比例;
 user-scalable：用户是否可以手动缩放。 
 有emmet插件的编辑器内简写"meta:vp"加tab键。
 
-<h6 id="禁止数字转拨号链接">禁止字符转链接</h6>
+<h6 id="禁止字符转链接">禁止字符转链接</h6>
 ```html
 <!-->不识别手机号<-->
 <meta name="format-detection" content="telephone=no">
@@ -43,7 +57,7 @@ user-scalable：用户是否可以手动缩放。
 <link rel="apple-touch-startup-image" href="webApp/startup.png" />
 ```
 
-<h3 id="移动端">pc端</h3>
+<h3 id="pc端">pc端</h3>
 
 <h6 id="指定浏览器内核渲染">指定浏览器内核渲染</h6>
 ```html

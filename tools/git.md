@@ -134,28 +134,19 @@
 </table>
 
 <h3 id="远程仓库">2.远程仓库</h3>
+
+
+<h6 id="远程仓库">远程仓库</h6>
 <table>
 	<tbody>
 		<tr>
 			<td>$ ssh-keygen -t rsa -C "youremail@example.com"</td>
 			<td>创建SSH KEY，在用户主目录里找到.ssh目录</td>
 		</tr>
-		<tr>
-			<td>id_rsa私钥不能泄露，id_rsa.pub公钥可以告诉任何人</td>
-		</tr>
+		<tr>id_rsa私钥不能泄露，id_rsa.pub公钥可以告诉任何人</tr>
 	</tbody>
 </table>
 > 登陆GitHub，用户设置-SSH Keys页面，自定义title，Key文本框里粘贴id_rsa.pub
-
-<h6 id="远程仓库">远程仓库</h6>
-<table>
-	<tbody>
-		<tr>
-			<td></td>
-			<td></td>
-		</tr>
-	</tbody>
-</table>
 
 <h6 id="添加远程库">添加远程库</h6>
 <table>

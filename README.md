@@ -8,5 +8,5 @@
 - [tools](https://github.com/Gil2015/web_note/tree/master/tools)
 	+ [git指令](https://github.com/Gil2015/web_note/blob/master/tools/git%E6%8C%87%E4%BB%A4.md)
 
-- [web](https://github.com/Gil2015/web_note/tree/line1/web)
-	+ [常用网站]()
+- [web](https://github.com/Gil2015/web_note/tree/master/web)
+	+ [常用网站](https://github.com/Gil2015/web_note/blob/master/web/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99.md)

@@ -30,6 +30,7 @@
 ---
 
 <h3 id="基本操作">1.基本操作</h3>
+<br>
 
 <h6 id="安装git" >·安装git</h6>
 <table>
@@ -44,6 +45,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="创建版本库">·创建版本库</h6>
 <table>
@@ -62,6 +64,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="检索">·检索</h6>
 <table>
@@ -80,6 +83,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="版本回退">·版本回退</h6>
 <table>
@@ -106,6 +110,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="撤销修改">·撤销修改</h6>
 <table>
@@ -120,6 +125,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="删除文件">·删除文件</h6>
 <table>
@@ -134,8 +140,10 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h3 id="远程仓库">2.远程仓库</h3>
+<br>
 
 
 <h6 id="远程仓库">·远程仓库</h6>
@@ -152,6 +160,8 @@
 	</tbody>
 </table>
 > 登陆GitHub，用户设置-SSH Keys页面，自定义title，Key文本框里粘贴id_rsa.pub
+
+<br>
 
 <h6 id="添加远程库">·添加远程库</h6>
 > 登陆GitHub，右上角-Create a new repo，输入name创建一个新的仓库
@@ -176,6 +186,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="从远程克隆库">·从远程克隆库</h6>
 <table>
@@ -186,9 +197,11 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 
 <h3 id="分支管理">3.分支管理</h3>
+<br>
 
 <h6 id="创建与合并分支">·创建与合并分支</h6>
 <table>
@@ -223,6 +236,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="解决冲突">·解决冲突</h6>
 <table>
@@ -237,6 +251,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="分支管理">·分支管理</h6>
 <table>
@@ -247,6 +262,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="bug分支">·bug分支</h6>
 <table>
@@ -273,9 +289,11 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 
 <h3 id="标签管理">4.标签管理</h3>
+<br>
 
 <h6 id="创建标签">·创建标签</h6>
 <table>
@@ -306,6 +324,7 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 <h6 id="操作标签">·操作标签</h6>
 <table>
@@ -342,12 +361,16 @@
 		</tr>
 	</tbody>
 </table>
+<br>
 
 
 <h3 id="自定义git">5.自定义git</h3>
+<br>
 
 <h6 id="忽略特殊文件">·忽略特殊文件</h6>
 > git工作区下新建一个xx.gitignore文件,把忽略的文件名填进去，不同项目配置。[参考](https://github.com/github/gitignore)
+
+<br>
 
 <h6 id="配置别名">·配置别名</h6>
 <table>
@@ -359,6 +382,7 @@
 	</tbody>
 </table>
 实用配置，带颜色的查看分支
+
 `git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"`
 
 > Git配置文件放在.git/config文件中,别名就在[alias]后面，要删除别名，对应的行删掉即可

@@ -143,7 +143,10 @@
 			<td>$ ssh-keygen -t rsa -C "youremail@example.com"</td>
 			<td>创建SSH KEY，在用户主目录里找到.ssh目录</td>
 		</tr>
-		<tr>id_rsa私钥不能泄露，id_rsa.pub公钥可以告诉任何人</tr>
+		<tr>
+			<td></td>
+			<td>id_rsa私钥不能泄露，id_rsa.pub公钥可以告诉任何人</td>
+		</tr>
 	</tbody>
 </table>
 > 登陆GitHub，用户设置-SSH Keys页面，自定义title，Key文本框里粘贴id_rsa.pub

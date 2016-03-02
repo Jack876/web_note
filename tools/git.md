@@ -30,10 +30,18 @@
 <h3 id="基本操作">1.基本操作</h3>
 
 <h6 id="安装git" >安装git</h6>
-指令 | 描述
------|----
-git config --global user.name "Your Name" | 设置用户名
-git config --global user.email "email@example.com" | 设置邮箱 
+<table>
+	<tbody>
+		<tr>
+			<td>git config --global user.name "Your Name"</td>
+			<td>设置用户名</td>
+		</tr>
+		<tr>
+			<td>git config --global user.email "email@example.com"</td>
+			<td>设置邮箱</td>
+		</tr>
+	</tbody>
+</table>
 
 <h6 id="创建版本库">创建版本库</h6>
 <table>

@@ -51,10 +51,11 @@
 <!-->webApp屏幕顶部条的颜色,可选black,black-translucent,默认白色<-->
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<!-->webApp的启动图标,图片尺寸57x57,rintina:117x117,ipad:72x72<-->
+<!-->webApp的启动图标,图片尺寸57x57,rintina:117x117,ipad:72x72，ipad ritina:144x144<-->
 <link rel="apple-touch-icon-precomposed" href="webApp/appIcon57.png"/>
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="webApp/appIcon72.png"/>
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="webApp/appIcon114.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="webApp/appIcon144.png"/>
 
 <!-->webApp的启动界面，尺寸320x640<-->
 <link rel="apple-touch-startup-image" href="webApp/startup.png" />

@@ -20,12 +20,14 @@
 	+ [增加ios移动端滑感](#增加ios移动端滑感)
 	+ [动画特效加速（适当用）](#动画特效加速)
 - [6.页面与布局](#6.页面与布局)
+	+ [媒体查询](#媒体查询)
 	+ [清除浮动](#清除浮动)
 	+ [表格防止溢出](#表格防止溢出)
 	+ [定位底部footer](#定位底部footer)
 	+ [ios端fixed属性BUG解决方案](#ios端fixed属性BUG解决方案)
 - [7.美化与装饰](#7.美化与装饰)
 	+ [android隐藏原生滚动条](#android隐藏原生滚动条)
+	+ [消除ie10input里的叉号](#消除ie10input里的叉号)
 
 ---
 
@@ -191,6 +193,55 @@ html代码
 
 <h3 id="6.页面与布局">6.页面与布局</h3> 
 
+<h6 id="媒体查询"> ·媒体查询</h6>
+```css
+	//移动端分辨率
+	// iphone4~5
+	@media only screen and (min-width : 320px) and (-webkit-min-device-pixel-ratio:2) {...}
+	// iphone6
+	@media only screen and (min-width : 375px) and (-webkit-min-device-pixel-ratio:2) {...}
+	// iphone6 plus
+	@media only screen and (min-width : 414px) and (-webkit-min-device-pixel-ratio:2) {...}
+	// 比iphone6 plus更大的屏幕
+	@media only screen and (min-width : 460px) and (-webkit-min-device-pixel-ratio:2) {...}
+
+
+	//平板
+	// ipad
+	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
+	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
+
+	//判断横竖屏
+	//ipad横屏 
+	@media only screen 
+	and (min-device-width : 768px)
+	and (max-device-width : 1024px)
+	and (orientation : landscape) {...}
+	// ipad竖屏
+	@media only screen
+	and (min-device-width : 768px)
+	and (max-device-width : 1024px)
+	and (orientation : portrait) {...}
+
+
+	//pc端常见分辨率
+	@media only screen and (min-width: 1024px) {...}
+	@media only screen and (min-width: 1100px) {...}
+	@media only screen and (min-width: 1280px) {...}
+	@media only screen and (min-width: 1366px) {...}
+	@media only screen and (min-width: 1440px) {...}
+	@media only screen and (min-width: 1680px) {...}
+	@media only screen and (min-width: 1920px) {...}
+
+	//更详细的pc端分辨率设置
+	@media screen and (device-aspect-ratio: 16/9) { … }
+	@media screen and (device-aspect-ratio: 32/18) { … }
+	@media screen and (device-aspect-ratio: 1280/720) { … }
+	@media screen and (device-aspect-ratio: 2560/1440) { … }
+```
+
+<br>
+
 <h6 id="清除浮动"> ·清除浮动</h6>
 ```css
 	.clear:after {
@@ -250,4 +301,9 @@ android
 	::-webkit-scrollbar{
 	    opacity: 0;
 	}
+```
+
+<h6 id="消除ie10input里的叉号">消除ie10input里的叉号</h6>
+```css
+	input:-ms-clear{display:none;}
 ```

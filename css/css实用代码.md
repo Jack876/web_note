@@ -193,43 +193,51 @@ html代码
 
 <h6 id="媒体查询"> ·媒体查询</h6>
 ```css
-	html{font-size: 100px;}
+	//移动端分辨率
 	// iphone4~5
-	@media only screen and (min-width : 320px) and (-webkit-min-device-pixel-ratio:2) {
-		html{font-size: 100px;}
-	}
+	@media only screen and (min-width : 320px) and (-webkit-min-device-pixel-ratio:2) {...}
 	// iphone6
-	@media only screen and (min-width : 375px) and (-webkit-min-device-pixel-ratio:2) {
-	    html{font-size: 117.1875px;}
-	}
+	@media only screen and (min-width : 375px) and (-webkit-min-device-pixel-ratio:2) {...}
 	// iphone6 plus
-	@media only screen and (min-width : 414px) and (-webkit-min-device-pixel-ratio:2) {
-	    html{font-size: 129.375px;}
-	}
+	@media only screen and (min-width : 414px) and (-webkit-min-device-pixel-ratio:2) {...}
+	// 比iphone6 plus更大的屏幕
+	@media only screen and (min-width : 460px) and (-webkit-min-device-pixel-ratio:2) {...}
+
+
+	//平板
+	// ipad
+	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
+	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
+
+	//判断横竖屏
+	//ipad横屏 
+	@media only screen 
+	and (min-device-width : 768px)
+	and (max-device-width : 1024px)
+	and (orientation : landscape) {...}
+	// ipad竖屏
+	@media only screen
+	and (min-device-width : 768px)
+	and (max-device-width : 1024px)
+	and (orientation : portrait) {...}
+
 
 	//pc端常见分辨率
-	@media (min-width: 1024px){
-		body{font-size: 18px}
-	} 
-	@media (min-width: 1100px) {
-		body{font-size: 20px}
-	} 
-	@media (min-width: 1280px) {
-		body{font-size: 22px;}
-	} 
-	@media (min-width: 1366px) {
-		body{font-size: 24px;}
-	}  
-	@media (min-width: 1440px) {
-		body{font-size: 25px;}
-	} 
-	@media (min-width: 1680px) {
-		body{font-size: 28px;}
-	} 
-	@media (min-width: 1920px) {
-		body{font-size: 33px;}
-	} 
+	@media only screen and (min-width: 1024px) {...}
+	@media only screen and (min-width: 1100px) {...}
+	@media only screen and (min-width: 1280px) {...}
+	@media only screen and (min-width: 1366px) {...}
+	@media only screen and (min-width: 1440px) {...}
+	@media only screen and (min-width: 1680px) {...}
+	@media only screen and (min-width: 1920px) {...}
+
+	//更详细的pc端分辨率设置
+	@media screen and (device-aspect-ratio: 16/9) { … }
+	@media screen and (device-aspect-ratio: 32/18) { … }
+	@media screen and (device-aspect-ratio: 1280/720) { … }
+	@media screen and (device-aspect-ratio: 2560/1440) { … }
 ```
+
 <br>
 
 <h6 id="清除浮动"> ·清除浮动</h6>

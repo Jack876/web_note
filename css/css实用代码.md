@@ -27,6 +27,7 @@
 	+ [ios端fixed属性BUG解决方案](#ios端fixed属性BUG解决方案)
 - [7.美化与装饰](#7.美化与装饰)
 	+ [android隐藏原生滚动条](#android隐藏原生滚动条)
+	+ [消除ie10input里的叉号](#消除ie10input里的叉号)
 
 ---
 
@@ -300,4 +301,9 @@ android
 	::-webkit-scrollbar{
 	    opacity: 0;
 	}
+```
+
+<h6 id="消除ie10input里的叉号">消除ie10input里的叉号</h6>
+```css
+	input:-ms-clear{display:none;}
 ```

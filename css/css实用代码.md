@@ -191,6 +191,47 @@ html代码
 
 <h3 id="6.页面与布局">6.页面与布局</h3> 
 
+<h6 id="媒体查询"> ·媒体查询</h6>
+```css
+	html{font-size: 100px;}
+	// iphone4~5
+	@media only screen and (min-width : 320px) and (-webkit-min-device-pixel-ratio:2) {
+		html{font-size: 100px;}
+	}
+	// iphone6
+	@media only screen and (min-width : 375px) and (-webkit-min-device-pixel-ratio:2) {
+	    html{font-size: 117.1875px;}
+	}
+	// iphone6 plus
+	@media only screen and (min-width : 414px) and (-webkit-min-device-pixel-ratio:2) {
+	    html{font-size: 129.375px;}
+	}
+
+	//pc端常见分辨率
+	@media (min-width: 1024px){
+		body{font-size: 18px}
+	} 
+	@media (min-width: 1100px) {
+		body{font-size: 20px}
+	} 
+	@media (min-width: 1280px) {
+		body{font-size: 22px;}
+	} 
+	@media (min-width: 1366px) {
+		body{font-size: 24px;}
+	}  
+	@media (min-width: 1440px) {
+		body{font-size: 25px;}
+	} 
+	@media (min-width: 1680px) {
+		body{font-size: 28px;}
+	} 
+	@media (min-width: 1920px) {
+		body{font-size: 33px;}
+	} 
+```
+<br>
+
 <h6 id="清除浮动"> ·清除浮动</h6>
 ```css
 	.clear:after {

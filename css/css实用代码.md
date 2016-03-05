@@ -48,12 +48,12 @@
 <h6 id="文字，字符间距"> ·文字，字符间距</h6>
 ```css
 	p {
-		word-spacing:20px;				//空格长度
-		letter-spacing:20px;			//字间距
-		white-spacing:pre;				//保留多个空格
-		white-space: nowrap;			//禁止换行
-		white-space: pre-wrap;			//保留所有空格和回车
-		white-space: pre-line;			//忽略多个空格为1个，保留回车
+		word-spacing:20px;				/* 空格长度 */
+		letter-spacing:20px;			/* 字间距 */
+		white-spacing:pre;				/* 保留多个空格 */
+		white-space: nowrap;			/* 禁止换行 */
+		white-space: pre-wrap;			/* 保留所有空格和回车 */
+		white-space: pre-line;			/* 忽略多个空格为1个，保留回车 */
 	}
 ```
 <br>
@@ -63,7 +63,7 @@
 	p { 
 		white-space: nowrap;
 		overflow:hidden;				
-		overflow: ellipsis; 			//使用省略号
+		overflow: ellipsis; 			/* 使用省略号 */
 	}				
 ```
 <br>
@@ -71,10 +71,10 @@
 <h6 id="文本溢出2"> ·文本溢出(多行)</h6>
 ```css
 	p { 
-		display: -webkit-box;			//将对象作为弹性伸缩盒子模型显示
-		text-overflow: ellipsis;		//多行文本的情况下，使用省略号
-		-webkit-line-clamp: 2;          //限制行数
-		-webkit-box-orient: vertical; 	//设置伸缩盒对象的子元素的排列方式
+		display: -webkit-box;			/* 将对象作为弹性伸缩盒子模型显示 */
+		text-overflow: ellipsis;		/* 多行文本的情况下，使用省略号 */
+		-webkit-line-clamp: 2;          /* 限制行数 */
+		-webkit-box-orient: vertical; 	/* 设置伸缩盒对象的子元素的排列方式 */
 	}		
 ```
 <br>
@@ -168,7 +168,7 @@ html代码
 
 <h6 id="对div进行裁切"> ·对div进行裁切</h6>
 ```css
-	div { clip-path: url("#cp"); } 		//#cp为svg
+	div { clip-path: url("#cp"); } 		/* #cp为svg */
 ```
 <br>
 
@@ -195,31 +195,36 @@ html代码
 
 <h6 id="媒体查询"> ·媒体查询</h6>
 ```css
-	//移动端分辨率
-	// iphone4~5
+	/* 移动端分辨率 */
+	/*  iphone4~5 */
 	@media only screen and (min-width : 320px) and (-webkit-min-device-pixel-ratio:2) {...}
-	// iphone6
+	/*  iphone6 */
 	@media only screen and (min-width : 375px) and (-webkit-min-device-pixel-ratio:2) {...}
-	// iphone6 plus
+	/*  iphone6 plus */
 	@media only screen and (min-width : 414px) and (-webkit-min-device-pixel-ratio:2) {...}
-	// 比iphone6 plus更大的屏幕
+	/*  比iphone6 plus更大的屏幕 */
 	@media only screen and (min-width : 460px) and (-webkit-min-device-pixel-ratio:2) {...}
-	//平板
-	// ipad
+
+
+	/* 平板 */
+	/*  ipad */
 	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
 	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
-	//判断横竖屏
-	//ipad横屏 
+
+	/* 判断横竖屏 */
+	/* ipad横屏 */ 
 	@media only screen 
 	and (min-device-width : 768px)
 	and (max-device-width : 1024px)
 	and (orientation : landscape) {...}
-	// ipad竖屏
+	/*  ipad竖屏 */
 	@media only screen
 	and (min-device-width : 768px)
 	and (max-device-width : 1024px)
 	and (orientation : portrait) {...}
-	//pc端常见分辨率
+
+
+	/* pc端常见分辨率 */
 	@media only screen and (min-width: 1024px) {...}
 	@media only screen and (min-width: 1100px) {...}
 	@media only screen and (min-width: 1280px) {...}
@@ -227,7 +232,8 @@ html代码
 	@media only screen and (min-width: 1440px) {...}
 	@media only screen and (min-width: 1680px) {...}
 	@media only screen and (min-width: 1920px) {...}
-	//更详细的pc端分辨率设置
+
+	/* 更详细的pc端分辨率设置 */
 	@media screen and (device-aspect-ratio: 16/9) { … }
 	@media screen and (device-aspect-ratio: 32/18) { … }
 	@media screen and (device-aspect-ratio: 1280/720) { … }
@@ -276,8 +282,8 @@ html代码
 
 <h6 id="ios端fixed属性BUG解决方案"> ·ios端fixed属性BUG解决方案</h6>
 ```css
-	.con {								//.con为主体内容容器
-		position:fixed;					//或absolute
+	.con {								/* .con为主体内容容器 */
+		position:fixed;					/* 或absolute */
 		top:50px;
 		bottom:50px;
 		width:100%;

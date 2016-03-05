@@ -28,6 +28,7 @@
 - [7.美化与装饰](#7.美化与装饰)
 	+ [android隐藏原生滚动条](#android隐藏原生滚动条)
 	+ [消除ie10input里的叉号](#消除ie10input里的叉号)
+	+ [自定义鼠标](#自定义鼠标)
 
 ---
 
@@ -189,6 +190,8 @@ html代码
 		transform: translate3d(0, 0, 0);
 	}
 ```
+> 动画效果中，使用 translate 比使用定位性能高
+
 <br>
 
 <h3 id="6.页面与布局">6.页面与布局</h3> 
@@ -299,7 +302,14 @@ android
 
 <br>
 
-<h6 id="消除ie10input里的叉号">消除ie10input里的叉号</h6>
+<h6 id="消除ie10input里的叉号">·消除ie10input里的叉号</h6>
 ```css
 	input:-ms-clear{display:none;}
+```
+
+<h6 id="自定义鼠标">·自定义鼠标</h6>
+```css
+	body,label {cursor:url(mouse/normal.cur),auto;}
+	a:hover {cursor:url(mouse/link.cur),pointer;}
+	input:hover {cursor:url(mouse/text.cur),text;}
 ```

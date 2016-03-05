@@ -3,6 +3,7 @@
 - [移动端](#移动端)
 	+ [移动端禁止缩放](#移动端禁止缩放)
 	+ [禁止字符转链接](#禁止字符转链接)
+	+ [智能应用程序横幅](#智能应用程序横幅)
 	+ [webApp设置](#webApp设置)
 - [pc端](#pc端)
 	+ [指定浏览器内核渲染](#指定浏览器内核渲染)
@@ -37,6 +38,13 @@
 <meta name="format-detection" content="telephone=no">
 <!-->不识别邮箱<-->
 <meta name="format-detection" content="email=no">
+```
+<br>
+
+<h6 id="智能应用程序横幅">·智能应用程序横幅</h6>
+当网站上有一个相关联的本机应用程序时，Safari浏览器可以显示一个横幅。 如果用户没有安装这个应用程序将显示“安装”按钮，或已经安装的显示“查看”按钮可打开它。
+```html
+	<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL">
 ```
 <br>
 

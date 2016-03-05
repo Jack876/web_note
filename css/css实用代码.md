@@ -208,20 +208,14 @@ html代码
 
 	/* 平板 */
 	/*  ipad */
-	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
-	@media only screen and (min-width : 768px) and (-webkit-min-device-pixel-ratio:2) {...}
+	@media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio:2) {...}
+	@media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio:2) {...}
 
 	/* 判断横竖屏 */
 	/* ipad横屏 */ 
-	@media only screen 
-	and (min-device-width : 768px)
-	and (max-device-width : 1024px)
-	and (orientation : landscape) {...}
+	@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation : landscape) {...}
 	/*  ipad竖屏 */
-	@media only screen
-	and (min-device-width : 768px)
-	and (max-device-width : 1024px)
-	and (orientation : portrait) {...}
+	@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation : portrait) {...}
 
 
 	/* pc端常见分辨率 */

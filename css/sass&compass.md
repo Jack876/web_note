@@ -27,13 +27,13 @@
 
 <h6>os x系统</h6>
 
-> 打开cmd工具安装brew:/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+> 打开cmd工具安装brew： /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 > 通过[cakebrew](https://www.cakebrew.com/)(brew可视化工具)安装gpg：
 all formulae中搜索gnupg并安装gnupg2
 
-> 打开cmd工具安装rvm，先输入：gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-等待安装完毕后再输入：\\curl -sSL https://get.rvm.io | bash -s stable
+> 打开cmd工具安装rvm，先输入： gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+等待安装完毕后再输入： \\curl -sSL https://get.rvm.io | bash -s stable
 (整个过程如有失败可能需要翻墙)
 
 <br>

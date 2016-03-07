@@ -1,7 +1,8 @@
 **`目录`**
 
-- [安装、使用sass&compass](#安装、使用sass&compass)
-	+ [安装](#安装)
+- [安装、使用](#安装、使用)
+	+ [安装ruby](#安装ruby)
+	+ [安装sass&compass](#安装sass&compass)
 	+ [使用](#使用)
 - [sass常用语法](#sass常用语法)
 	+ [声明变量](#声明变量)
@@ -16,11 +17,52 @@
 
 ---
 
-<h2 id="安装、使用sass&compass">安装、使用sass&compass</h2> 
+<h2 id="安装、使用">安装、使用</h2>
 
 
-<h4 id="安装">安装</h4> 
-> 使用cmd指令前先安装[ruby(windows版)](http://rubyinstaller.org/downloads/)
+<h4 id="安装ruby">安装ruby</h4>
+<h6>windows系统</h6>
+
+> 使用cmd指令前先安装[ruby(windows版)](http://rubyinstaller.org/downloads/)即可
+
+<h6>os x系统</h6>
+
+> 打开cmd工具安装brew:/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+> 通过[cakebrew](https://www.cakebrew.com/)(brew可视化工具)安装gpg：
+all formulae中搜索gnupg并安装gnupg2
+
+> 打开cmd工具安装rvm，先输入：gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+等待安装完毕后再输入：\\curl -sSL https://get.rvm.io | bash -s stable
+(整个过程如有失败可能需要翻墙)
+
+<br>
+
+**`rvm使用指令`**
+<table>
+	<tbody>
+		<tr>
+			<td>rvm list known</td>
+			<td>查看当前ruby可用版本</td>
+		</tr>
+		<tr>
+			<td>rvm list</td>
+			<td>已安装的ruby版本</td>
+		</tr>
+		<tr>
+			<td>rvm install 2.2.1</td>
+			<td>安装指定版本的ruby</td>
+		</tr>
+		<tr>
+			<td>rvm use 2.0.0</td>
+			<td>默认使用某版本ruby</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>
+
+<h4 id="安装sass&compass">安装sass&compass</h4>
 
 cmd指令|说明
 -----|-----
@@ -32,11 +74,11 @@ gem install sass --version=3.3.0 | 安装指定版本sass
 gem list | 列出gem本地所有程序包
 gem uninstall sass --version=3.3.0 | 删除指定版本sass
 gem install compass | 安装[compass](http://compass-style.org/reference/compass/)
-gem install compass-normalize | 安装normalize插件（sass语法增强）	
+gem install compass-normalize | 安装normalize插件（sass语法增强）
 
 <br>
 
-<h4 id="使用">使用</h4> 
+<h4 id="使用">使用</h4>
 > 指定目录下打开cmd窗口使用指令。
 
 windows系统写代码过程转译会有乱码或报错的情况，找到engine.rb文件（一般位于Ruby22\lib\ruby\gems\2.2.0\gems\sass-3.4.18\lib\sass目录下面），在所有的require后面新增如下代码：**Encoding.default_external = Encoding.find('utf-8')**
@@ -50,7 +92,7 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 
 
 ---
-<h2 id="sass常用语法">sass常用语法</h2> 
+<h2 id="sass常用语法">sass常用语法</h2>
 
 
 <h6 id="声明变量"> ·声明变量</h6>
@@ -185,7 +227,7 @@ div {
 //不会被编译，/**/会被编译  	  
 
 <br>
-	
+
 
 <h6 id="运算"> ·运算</h6>
 - 被乘除数后不能加单位；

@@ -1,15 +1,17 @@
 **`m目录`**
 
 - [安装](#安装)
-
 - [使用](#使用)
   + [配置文件](#配置文件)
   + [配置属性](#配置属性)
   + [插件属性](#插件属性)
   + [打包阶段插件](#打包阶段插件)
+- [调试](#调试)
   + [服务器使用](#服务器使用)
 
-<h3 id="安装">安装</h3>
+---
+
+<h3 id="安装">1.安装</h3>
 > 安装[fis3](http://fis.baidu.com/)前先安装[nodejs](http://nodejs.cn/)
 cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://registry.npm.taobao.org
 
@@ -27,34 +29,78 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 </table>
 <br>
 
-<h3 id="使用">使用</h3>
+<h3 id="使用">2.使用</h3>
 > 项目根目录下新建fis3配置文件，格式参考：
 
 ```javascript
-// fis.match('::packager', {
-//   spriter: fis.plugin('csssprites')
-// });
+// 所有的文件产出到 static/ 目录下
+fis.match('*', {
+    release: '/static/$0'
+});
 
-// fis.match('*', {
-//   useHash: false
-// });
+// 所有模板放到 tempalte 目录下
+fis.match('*.html', {
+    release: '/template/$0'
+});
 
-// fis.match('*.js', {
-//   optimizer: fis.plugin('uglify-js')
-// });
+// widget源码目录下的资源被标注为组件
+fis.match('/widget/**/*', {
+    isMod: true
+});
 
-// fis.match('*.css', {
-//   useSprite: true,
-//   optimizer: fis.plugin('clean-css')
-// });
+// widget下的 js 调用 jswrapper 进行自动化组件化封装
+fis.match('/widget/**/*.js', {
+    postprocessor: fis.plugin('jswrapper', {
+        type: 'commonjs'
+    })
+});
 
-// fis.match('*.png', {
-//   optimizer: fis.plugin('png-compressor')
-// });
+// test 目录下的原封不动产出到 test 目录下
+fis.match('/test/**/*', {
+    release: '$0'
+});
+
+// optimize
+fis.media('prod')
+    .match('*.js', {
+        optimizer: fis.plugin('uglify-js', {
+            mangle: {
+                expect: ['require', 'define', 'some string'] //不想被压的
+            }
+        })
+    })
+    .match('*.css', {
+        optimizer: fis.plugin('clean-css', {
+            'keepBreaks': true //保持一个规则一个换行
+        })
+    });
+
+  // pack
+fis.media('prod')
+    // 启用打包插件，必须匹配 ::package
+    .match('::package', {
+        packager: fis.plugin('map'),
+        spriter: fis.plugin('csssprites', {
+            layout: 'matrix',
+            margin: '15'
+        })
+    })
+    .match('*.js', {
+        packTo: '/static/all_others.js'
+    })
+    .match('*.css', {
+        packTo: '/staitc/all_others.css'
+    })
+    .match('/widget/**/*.js', {
+        packTo: '/static/all_comp.js'
+    })
+    .match('/widget/**/*.css', {
+        packTo: '/static/all_comp.css'
+    });
 ```
 <br>
 
-<h6 id="release指令">release指令</h6>
+<h5 id="release指令">release指令</h5>
 | fis3指令 | 描述     |
 | :------------- | :------------- |
 | fis3 release       | 将根目录输出到服务器（www）文件夹     |
@@ -66,7 +112,7 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 
 <br>
 
-<h6 id="配置文件">配置文件</h6>
+<h5 id="配置文件">配置文件</h5>
 <table>
   <tbody>
     <tr>
@@ -94,7 +140,7 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 ```
 <br>
 
-<h6 id="配置属性">配置属性</h6>
+<h5 id="配置属性">配置属性</h5>
 | 属性     |  描述    | 示例    |
 | :------------- | :------------- | :------------- |
 | release     |  文件产出路径，该值可设为false，表示不产出    |  release:'/js/$0'   |
@@ -103,14 +149,14 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 | query     | 文件资源定位路径之后的query，比如'/css.css?=t14504902700'     | query: '?=t' + fis.get('new date')   |
 |      | 使用前先设置new date     | fis.set('new date', Date.now())；    |
 | id     | 设定文件的资源id     | id: 'jquery',    |
-|      | 使用     | var $ = require('jquery');
-    |
+|      | 使用     | var $ = require('jquery');|
 | moduleId     | 指定文件资源的模块id,插件fis3-hook-module里define会用到    | moduleId: 'a'    |
 |      | 编译前     | exports.a = 10    |
 |      | 编译后     | define('a',function(require,exports,module){exports.a = 10}）    |
 | url     | 指定文件的资源定位路径，以/开头,     | release: '/static/$0',url: '/static/new_project/$0'    |
 | chaset     | 指定文本文件的输出编码,默认是 utf8     | charset: 'gbk'    |
 | useHash     | 文件是否携带 md5 戳     | useHash: true    |
+| useSprite     | 合并css雪碧图,[使用方法](https://github.com/fex-team/fis-spriter-csssprites)     | useSprite: true    |
 | domain     | 给文件 URL 设置 domain 信息     | domain: 'http://cdn.baidu.com/'    |
 | rExt     | 设置最终文件产出后的后缀     | rExt: '.sass'    |
 | useMap     | 文件信息是否添加到 map.json     | useMap: true    |
@@ -123,9 +169,10 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 | isHtmlLike     | 指定对文件进行 html 相关语言能力处理，值类型：string     |     |
 <br>
 
-<h6 id="插件属性">插件属性</h6>
+<h5 id="插件属性">插件属性</h5>
 
 **lint**
+
 启用 lint 插件进行代码检查,[更多插件](http://npmsearch.com/?q=fis-lint%20fis3-lint)
 ```javascript
 fis.match('*.js', {
@@ -137,6 +184,7 @@ fis.match('*.js', {
 <br>
 
 **parser**
+
 启用 parser 插件对文件进行处理，[更多插件](http://npmsearch.com/?q=fis-parser%20fis3-parser)
 ```javascript
 fis.match('*.sass', {
@@ -147,6 +195,7 @@ fis.match('*.sass', {
 <br>
 
 **preprocessor**
+
 标准化前处理,[更多插件](http://npmsearch.com/?q=fis-preprocessor%20fis3-preprocessor)
 ```javascript
 fis.match('*.{css,less}', {
@@ -156,10 +205,13 @@ fis.match('*.{css,less}', {
 <br>
 
 **standard**
+
 自定义标准化，可以自定义 uri、embed、require 等三种能力，可自定义三种语言能力的语法，[更多插件](http://npmsearch.com/?q=fis-standard%20fis3-standard)
+<br>
 <br>
 
 **postprocessor**
+
 标准化后处理,[更多插件](http://npmsearch.com/?q=fis-postprocessor%20fis3-postprocessor)
 ```javascript
 fis.match('*.{js,tpl}', {
@@ -169,6 +221,7 @@ fis.match('*.{js,tpl}', {
 <br>
 
 **optimizer**
+
 启用优化处理插件，并配置其属性,[更多插件](http://npmsearch.com/?q=fis-optimizer%20fis3-optimizer)
 ```javascript
 fis.match('*.css', {
@@ -178,7 +231,7 @@ fis.match('*.css', {
 <br>
 
 
-<h6 id="打包阶段插件">打包阶段插件</h6>
+<h5 id="打包阶段插件">打包阶段插件</h5>
 打包阶段插件设置时必须分配给所有文件，设置时必须 match ::package，不然不做处理。
 ```javascript
 fis.match('::package', {
@@ -189,6 +242,7 @@ fis.match('::package', {
 <br>
 
 **prepackager**
+
 打包预处理插件
 ```javascript
 fis.match('::package', {
@@ -198,6 +252,7 @@ fis.match('::package', {
 <br>
 
 **packager**
+
 打包插件
 ```javascript
 //当在 prod 状态下进行打包
@@ -208,6 +263,7 @@ fis.media('prod').match('::package', {
 <br>
 
 **spriter**
+
 打包后处理csssprite的插件
 ```javascript
 //当在 prod 状态下进行 csssprites 处理
@@ -218,6 +274,7 @@ fis.media('prod').match('::package', {
 <br>
 
 **postpackager**
+
 打包后处理插件
 ```javascript
 //当在 prod 状态下调用打包后处理插件
@@ -228,6 +285,7 @@ fis.media('prod').match('::package', {
 <br>
 
 **deploy**
+
 设置项目发布方式
 > 编译打包后，新增发布阶段，这个阶段主要决定了资源的发布方式，而这些方式都是以插件的方式提供的。比如你想一键部署到远端或者是把文件打包到 Tar/Zip 又或者是直接进行 Git 提交，都可以通过设置此属性，调用相应的插件即可。
 
@@ -246,10 +304,15 @@ fis.match('**', {
 - [encoding](https://github.com/fex-team/fis3-deploy-encoding)
 <br>
 
+<h3 id="调试">3.调试</h3>
 
-<h6 id="服务器使用">服务器使用</h6>
+<h5 id="服务器使用">服务器使用</h5>
 <table>
   <tbody>
+    <tr>
+      <td>fis3 server -h</td>
+      <td>打开服务器帮助</td>
+    </tr>
     <tr>
       <td>fis3 server start/stop</td>
       <td>启动/关闭服务器</td>
@@ -257,7 +320,7 @@ fis.match('**', {
     <tr>
       <td>fis3 server open</td>
       <td>打开服务器目录</td>
-    </tr>s
+    </tr>
     <tr>
       <td>fis3 release</td>
       <td>在服务器内创建当前目录下的工程</td>

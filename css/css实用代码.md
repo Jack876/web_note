@@ -23,6 +23,7 @@
 	+ [媒体查询](#媒体查询)
 	+ [清除浮动](#清除浮动)
 	+ [表格防止溢出](#表格防止溢出)
+	+ [垂直居中](#垂直居中)
 	+ [定位底部footer](#定位底部footer)
 	+ [ios端fixed属性BUG解决方案](#ios端fixed属性BUG解决方案)
 - [7.美化与装饰](#7.美化与装饰)
@@ -61,7 +62,7 @@
 
 <h6 id="文本溢出"> ·文本溢出(单行)</h6>
 ```css
-	p { 
+	p {
 		white-space: nowrap;
 		overflow:hidden;				
 		overflow: ellipsis; 			/* 使用省略号 */
@@ -71,7 +72,7 @@
 
 <h6 id="文本溢出2"> ·文本溢出(多行)</h6>
 ```css
-	p { 
+	p {
 		display: -webkit-box;			/* 将对象作为弹性伸缩盒子模型显示 */
 		text-overflow: ellipsis;		/* 多行文本的情况下，使用省略号 */
 		-webkit-line-clamp: 2;          /* 限制行数 */
@@ -194,7 +195,7 @@ html代码
 
 <br>
 
-<h3 id="6.页面与布局">6.页面与布局</h3> 
+<h3 id="6.页面与布局">6.页面与布局</h3>
 
 <h6 id="媒体查询"> ·媒体查询</h6>
 ```css
@@ -215,7 +216,7 @@ html代码
 	@media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio:2) {...}
 
 	/* 判断横竖屏 */
-	/* ipad横屏 */ 
+	/* ipad横屏 */
 	@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation : landscape) {...}
 	/*  ipad竖屏 */
 	@media only screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation : portrait) {...}
@@ -242,12 +243,12 @@ html代码
 <h6 id="清除浮动"> ·清除浮动</h6>
 ```css
 	.clear:after {
-		content: "."; 
-		display: block; 
-		clear: both; 
-		visibility: hidden; 
-		line-height: 0; 
-		height: 0; 
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
 	}
 ```
 > 该class加在父元素上即可
@@ -259,20 +260,33 @@ html代码
 	table { table-layout:fixed; }
 	td { word-break: break-all; }
 ```
+表格自动宽度
+```css
+	td { white-space: nowrap;}
+```
 <br>
+
+<h6 id="垂直居中"> ·垂直居中</h6>
+```css
+	.vc {
+		position:relative;
+		top:50%;
+		transform: translateY(-50%);
+	};
+```
 
 <h6 id="定位底部footer"> ·定位底部footer</h6>
 ```css
 	.con {
 		min-height: 100%;
-		margin-bottom: -150px; 
+		margin-bottom: -150px;
 	}
 	.con:after {
 		content: "";
 		display: block;
 	}
 	.footer, .con:after {
-		height: 150px; 
+		height: 150px;
 	}
 ```
 <br>
@@ -292,7 +306,7 @@ html代码
 
 <h3 id="7.美化与装饰"> 7.美化与装饰</h3>
 
-<h6 id="android隐藏原生滚动条">·android隐藏原生滚动条</h6> 
+<h6 id="android隐藏原生滚动条">·android隐藏原生滚动条</h6>
 android
 ```css
 	::-webkit-scrollbar{

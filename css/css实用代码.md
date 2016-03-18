@@ -325,6 +325,9 @@ android
 <h6 id="自定义鼠标">·自定义鼠标</h6>
 ```css
 	body,label {cursor:url(mouse/normal.cur),auto;}
-	a:hover {cursor:url(mouse/link.cur),pointer;}
+	a[href], input[type='submit'],
+	input[type='image'], label[for],
+	select, button, .pointer {cursor: url(mouse/link.cur),pointer;}
 	input:hover {cursor:url(mouse/text.cur),text;}
 ```
+<br>

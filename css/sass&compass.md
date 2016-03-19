@@ -228,7 +228,8 @@ div {
 
 
 <h6 id="注释"> ·注释</h6>
-//不会被编译，/\*\*/会被编译 	  
+//不会被编译，/\*\*/会被编译; 	
+如想保留压缩版的注释，在首个*号后加!  
 
 <br>
 
@@ -241,9 +242,9 @@ div {
 <br>
 
 <h2 id="compass常用语法">compass常用语法</h2>
-> 注:compass中只有reset和layput是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可;
+> 注:compass中只有reset和layout模块是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可;
 
-> 引用normalize，config.rb文件2行加入
+> 如需引用normalize模块，config.rb文件2行加入：
 ```ruby
 require 'compass-normalize'
 ```
@@ -251,35 +252,42 @@ require 'compass-normalize'
 <br>
 
 <h6 id="reset模块">reset模块</h6>
-`浏览器样式重置模块，减少不同浏览器间的差异性。`
-
+`浏览器样式重置模块，减少不同浏览器间的差异性。[参考文档](http://compass-style.org/reference/compass/reset/utilities/)`
 
 <br>
 
 <h6 id="layout模块">layput模块</h6>
-`页面布局模块。`
-
-
+`页面布局模块。[参考文档](http://compass-style.org/reference/compass/layout/)`
+> stretch(top, right, bottom, left)`默认值:(0,0,0,0)`
+```css
+	div {
+	position: absolute;
+	top:0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+```
 
 <br>
 
 <h6 id="css3模块">css3模块</h6>
-`跨浏览器的css3能力`
+`跨浏览器的css3能力。[参考文档]()`
 
 <br>
 
 <h6 id="helpers模块">helpers模块</h6>
-`函数模块`
+`函数模块。[参考文档]()`
 
 <br>
 
 <h6 id="typography模块">typography模块</h6>
-`主要修饰文本样式`
+`主要修饰文本样式。[参考文档]()`
 
 <br>
 
 <h6 id="utilities模块">utilities模块</h6>
-‘函数模块，与helper不同的是主要是mixin’
+`函数模块，与helper不同的是主要是mixin。[参考文档]()`
 
 <br>
 

@@ -252,7 +252,7 @@ require 'compass-normalize'
 <br>
 
 <h6 id="reset模块">reset模块</h6>
-浏览器样式重置模块，减少不同浏览器间的差异性。[参考文档](http://compass-style.org/reference/compass/reset/utilities/)
+浏览器样式重置模块，如需单独加载reset某模块，参考：[参考文档](http://compass-style.org/reference/compass/reset/utilities/)
 
 <br>
 
@@ -269,7 +269,7 @@ div {
 }
 ```
 
-<br>	
+<br>
 
 > **sticky-footer($height, #root, #root-footer, #footer)**
 ```html
@@ -320,4 +320,8 @@ div {
 <br>
 
 <h6 id="browser模块">browser模块</h6>
-配置compass默认支持哪些浏览器
+配置compass默认支持哪些浏览器,scss文件中输入@debug browsers()查看当前支持
+```scss
+/*设置需要支持哪些浏览器*/
+$supported-browsers:chrome,firefox;
+```

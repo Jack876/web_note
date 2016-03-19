@@ -270,6 +270,7 @@ div {
 ```
 
 
+
 > **sticky-footer($height, #root, #root-footer, #footer)**
 ```html
 <style>

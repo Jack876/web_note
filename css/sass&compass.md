@@ -269,6 +269,32 @@ div {
 }
 ```
 
+> **sticky-footer(height, #root, #root-footer, #footer)**
+```html
+<style>
+	html,body{ height:100%; }
+	#root {
+		clear: both;
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		margin-bottom: -$footer-height;
+	}
+	#root-footer { height: height;}
+	#footer {
+		clear: both;
+		position: relative;
+		height: height;
+	}
+</style>
+<body>
+  <div id="root">
+    <div id="root_footer"></div>
+  </div>
+  <div id="footer"></div>
+</body>
+```
+
 <br>
 
 <h6 id="css3模块">css3模块</h6>

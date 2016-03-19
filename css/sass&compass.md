@@ -258,18 +258,19 @@ require 'compass-normalize'
 
 <h6 id="layout模块">layput模块</h6>
 页面布局模块。[参考文档](http://compass-style.org/reference/compass/layout/)
-> **stretch(top, right, bottom, left)**  `默认值:(0,0,0,0)`
+> **stretch($top, $right, $bottom, $left)**  `默认值:(0,0,0,0)`
 ```css
 div {
 	position: absolute;
-	top:0;
-	right: 0;
-	bottom: 0;
-	left: 0;
+	top:$top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }
 ```
 
-> **sticky-footer(height, #root, #root-footer, #footer)**
+
+> **sticky-footer($height, #root, #root-footer, #footer)**
 ```html
 <style>
 	html,body{ height:100%; }
@@ -278,13 +279,13 @@ div {
 		min-height: 100%;
 		height: auto !important;
 		height: 100%;
-		margin-bottom: -$footer-height;
+		margin-bottom: $height;
 	}
-	#root-footer { height: height;}
+	#root-footer { height: $height;}
 	#footer {
 		clear: both;
 		position: relative;
-		height: height;
+		height: $height;
 	}
 </style>
 <body>

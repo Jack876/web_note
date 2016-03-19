@@ -11,6 +11,10 @@
 	+ [继承](#继承)
 	+ [占位符%](#占位符%)
 	+ [注意事项](#混合宏 VS 继承 VS 占位符)
+- [normalize常用语法](#normalize常用语法)
+	+ []()
+	+ []()
+	+ []()
 - [视频教程]()
 	+ [sass(1小时33分)](http://www.imooc.com/learn/364)
 	+ [compass(2小时41分)](http://www.imooc.com/learn/371)
@@ -233,3 +237,43 @@ div {
 - 被乘除数后不能加单位；
 - 减号前面要加空格，除号/要在公式外加括号（）；
 - 复杂的公式同正常数学一样用（）表明先后  
+
+<br>
+
+<h2 id="normalize常用语法">normalize常用语法</h2>
+> 注:normalize中只有reset和layput是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可
+
+<br>
+
+<h6 id="reset模块">reset模块</h6>
+`浏览器样式重置模块，减少不同浏览器间的差异性。`
+
+
+<br>
+
+<h6 id="layout模块">layput模块</h6>
+`页面布局模块。`
+
+
+
+<br>
+
+<h6 id="模块">模块</h6>
+``
+
+<br>
+
+<h6 id="模块">模块</h6>
+``
+
+<br>
+
+<h6 id="模块">模块</h6>
+``
+
+<br>
+
+<h6 id="模块">模块</h6>
+``
+
+<br>

@@ -12,9 +12,13 @@
 	+ [占位符%](#占位符%)
 	+ [注意事项](#混合宏 VS 继承 VS 占位符)
 - [normalize常用语法](#normalize常用语法)
-	+ []()
-	+ []()
-	+ []()
+	+ [reset模块](#reset模块)
+	+ [layput模块](#layput模块)
+	+ [browser模块](#browser模块)
+	+ [css3模块](#css3模块)
+	+ [helpers模块](#helpers模块)
+	+ [typography模块](#typography模块)
+	+ [utilities模块](#utilities模块)
 - [视频教程]()
 	+ [sass(1小时33分)](http://www.imooc.com/learn/364)
 	+ [compass(2小时41分)](http://www.imooc.com/learn/371)
@@ -299,8 +303,40 @@ div {
 
 <br>
 
+<h6 id="browser模块">browser模块</h6>
+配置compass默认支持哪些浏览器,scss文件中输入@debug browsers()查看当前支持。[参考文档](http://compass-style.org/reference/compass/support/)
+```sass
+/*设置需要支持哪些浏览器*/
+$supported-browsers:chrome,firefox;
+
+/*最低要求需要支持到哪个版本*/
+$browser-minimum-versions:("ie":"8");
+```
+
+<br>
+
 <h6 id="css3模块">css3模块</h6>
-跨浏览器的css3能力。[参考文档]()
+跨浏览器的css3能力。[参考文档](http://compass-style.org/reference/compass/css3/animation/)
+
+**使用方法：**`@include box-shadow(1px 1px 5px rgba(0,0,0,.5));`
+| 常用支持属性 | 备注    |
+| :------------- | :------------- |
+| animation       |        |
+| background-size       |        |
+| border-radius       |        |
+| box-shadow       |        |
+| box-sizing       |        |
+| css3 pie       |  需要额外安装插件      |
+| columms       |        |
+| filter      |        |
+| flexbox       |        |
+| font-face       |        |
+| opacity       |        |
+| text-shadow       |        |
+| inline-block       |        |
+| transform       |        |
+| transition       |        |
+
 
 <br>
 
@@ -311,6 +347,20 @@ div {
 
 <h6 id="typography模块">typography模块</h6>
 主要修饰文本样式。[参考文档]()
+> **hover-link**
+```sass
+@mixin hover-link {
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+```
+
+<br>
+
+> **link-colors($normal, $hover, $active, $visited, $focus)**
+默认值可以只传$normal(标签常态下color值);
 
 <br>
 
@@ -318,10 +368,3 @@ div {
 函数模块，与helper不同的是主要是mixin。[参考文档]()
 
 <br>
-
-<h6 id="browser模块">browser模块</h6>
-配置compass默认支持哪些浏览器,scss文件中输入@debug browsers()查看当前支持
-```scss
-/*设置需要支持哪些浏览器*/
-$supported-browsers:chrome,firefox;
-```

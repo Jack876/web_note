@@ -252,15 +252,15 @@ require 'compass-normalize'
 <br>
 
 <h6 id="reset模块">reset模块</h6>
-`浏览器样式重置模块，减少不同浏览器间的差异性。[参考文档](http://compass-style.org/reference/compass/reset/utilities/)`
+浏览器样式重置模块，减少不同浏览器间的差异性。[参考文档](http://compass-style.org/reference/compass/reset/utilities/)
 
 <br>
 
 <h6 id="layout模块">layput模块</h6>
-`页面布局模块。[参考文档](http://compass-style.org/reference/compass/layout/)`
-> stretch(top, right, bottom, left)`默认值:(0,0,0,0)`
+页面布局模块。[参考文档](http://compass-style.org/reference/compass/layout/)
+> **stretch(top, right, bottom, left)**  `默认值:(0,0,0,0)`
 ```css
-	div {
+div {
 	position: absolute;
 	top:0;
 	right: 0;
@@ -272,24 +272,24 @@ require 'compass-normalize'
 <br>
 
 <h6 id="css3模块">css3模块</h6>
-`跨浏览器的css3能力。[参考文档]()`
+跨浏览器的css3能力。[参考文档]()
 
 <br>
 
 <h6 id="helpers模块">helpers模块</h6>
-`函数模块。[参考文档]()`
+函数模块。[参考文档]()
 
 <br>
 
 <h6 id="typography模块">typography模块</h6>
-`主要修饰文本样式。[参考文档]()`
+主要修饰文本样式。[参考文档]()
 
 <br>
 
 <h6 id="utilities模块">utilities模块</h6>
-`函数模块，与helper不同的是主要是mixin。[参考文档]()`
+函数模块，与helper不同的是主要是mixin。[参考文档]()
 
 <br>
 
 <h6 id="browser模块">browser模块</h6>
-‘配置compass默认支持哪些浏览器’
+配置compass默认支持哪些浏览器

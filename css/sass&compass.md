@@ -269,7 +269,7 @@ div {
 }
 ```
 
-
+<br>	
 
 > **sticky-footer($height, #root, #root-footer, #footer)**
 ```html

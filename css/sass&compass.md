@@ -11,6 +11,14 @@
 	+ [继承](#继承)
 	+ [占位符%](#占位符%)
 	+ [注意事项](#混合宏 VS 继承 VS 占位符)
+- [normalize常用语法](#normalize常用语法)
+	+ [reset模块](#reset模块)
+	+ [layput模块](#layput模块)
+	+ [browser模块](#browser模块)
+	+ [css3模块](#css3模块)
+	+ [helpers模块](#helpers模块)
+	+ [typography模块](#typography模块)
+	+ [utilities模块](#utilities模块)
 - [视频教程]()
 	+ [sass(1小时33分)](http://www.imooc.com/learn/364)
 	+ [compass(2小时41分)](http://www.imooc.com/learn/371)
@@ -93,6 +101,7 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 
 ---
 <h2 id="sass常用语法">sass常用语法</h2>
+`统一文件后缀名.scss`
 
 
 <h6 id="声明变量"> ·声明变量</h6>
@@ -224,7 +233,8 @@ div {
 
 
 <h6 id="注释"> ·注释</h6>
-//不会被编译，/**/会被编译  	  
+//不会被编译，/\*\*/会被编译; 	
+如想保留压缩版的注释，在首个*号后加!  
 
 <br>
 
@@ -233,3 +243,161 @@ div {
 - 被乘除数后不能加单位；
 - 减号前面要加空格，除号/要在公式外加括号（）；
 - 复杂的公式同正常数学一样用（）表明先后  
+
+<br>
+
+<h2 id="compass常用语法">compass常用语法</h2>
+> 注:compass中只有reset和layout模块是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可;
+
+> 如需引用normalize模块，config.rb文件2行加入：
+```ruby
+require 'compass-normalize'
+```
+
+<br>
+
+<h6 id="reset模块">reset模块</h6>
+浏览器样式重置模块，如需单独加载reset某模块，参考：[参考文档](http://compass-style.org/reference/compass/reset/utilities/)
+
+<br>
+
+<h6 id="layout模块">layput模块</h6>
+页面布局模块。[参考文档](http://compass-style.org/reference/compass/layout/)
+> **stretch($top, $right, $bottom, $left)**  `默认值:(0,0,0,0)`
+```css
+div {
+	position: absolute;
+	top:$top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+```
+
+<br>
+
+> **sticky-footer($height, #root, #root-footer, #footer)**
+```html
+<style>
+	html,body{ height:100%; }
+	#root {
+		clear: both;
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		margin-bottom: $height;
+	}
+	#root-footer { height: $height;}
+	#footer {
+		clear: both;
+		position: relative;
+		height: $height;
+	}
+</style>
+<body>
+  <div id="root">
+    <div id="root_footer"></div>
+  </div>
+  <div id="footer"></div>
+</body>
+```
+
+<br>
+
+<h6 id="browser模块">browser模块</h6>
+配置compass默认支持哪些浏览器,scss文件中输入@debug browsers()查看当前支持。[参考文档](http://compass-style.org/reference/compass/support/)
+```sass
+/*设置需要支持哪些浏览器*/
+$supported-browsers:chrome,firefox;
+
+/*最低要求需要支持到哪个版本*/
+$browser-minimum-versions:("ie":"8");
+```
+
+<br>
+
+<h6 id="css3模块">css3模块</h6>
+跨浏览器的css3能力。[参考文档](http://compass-style.org/reference/compass/css3/animation/)
+
+**使用方法：**`@include box-shadow(1px 1px 5px rgba(0,0,0,.5));`
+
+
+| 常用支持属性 | 备注    |
+| :------------- | :------------- |
+| animation       |        |
+| background-size       |        |
+| border-radius       |        |
+| box-shadow       |        |
+| box-sizing       |        |
+| css3 pie       |  需要额外安装插件      |
+| columms       |        |
+| filter      |        |
+| flexbox       |        |
+| font-face       |        |
+| opacity       |        |
+| text-shadow       |        |
+| inline-block       |        |
+| transform       |        |
+| transition       |        |
+
+
+<br>
+
+<h6 id="helpers模块">helpers模块</h6>
+函数模块。[参考文档](http://compass-style.org/reference/compass/helpers/)
+
+<br>
+
+<h6 id="typography模块">typography模块</h6>
+主要修饰文本样式。[参考文档](http://compass-style.org/reference/compass/typography/)
+> **hover-link**
+```sass
+@mixin hover-link {
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+```
+
+<br>
+
+> **link-colors($normal, $hover, $active, $visited, $focus)**
+默认值可以只传$normal(标签常态下color值);
+
+<br>
+
+
+
+<h6 id="utilities模块">utilities模块</h6>
+函数模块，与helper不同的是主要是mixin。[参考文档](http://compass-style.org/reference/compass/utilities/)
+
+> **legacy-pie-clearfix**`清除浮动`
+```css
+div:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+```
+
+<br>
+
+**sprite功能使用**
+```sass
+/*将file文件夹下所有png合为一张图*/
+@import "file/*.png";
+
+/*url自动定位,filename只取最后一个路径的名字*/
+@include all-[filename]-sprites();
+
+/*使用背景图,class名在编译后的css文件里找*/
+<div class="图片class名"></div>
+
+/*使用同一个背景图片*/
+@include logo-sprite("图片class名(不用加.)");
+```
+> 如有hover修饰，在对应图片名后加上_hover或_active即可

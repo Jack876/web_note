@@ -101,6 +101,7 @@ compass compile | 输出css,配置在config.rb中（例压缩模式：13行中�
 
 ---
 <h2 id="sass常用语法">sass常用语法</h2>
+`统一文件后缀名.scss`
 
 
 <h6 id="声明变量"> ·声明变量</h6>
@@ -341,12 +342,12 @@ $browser-minimum-versions:("ie":"8");
 <br>
 
 <h6 id="helpers模块">helpers模块</h6>
-函数模块。[参考文档]()
+函数模块。[参考文档](http://compass-style.org/reference/compass/helpers/)
 
 <br>
 
 <h6 id="typography模块">typography模块</h6>
-主要修饰文本样式。[参考文档]()
+主要修饰文本样式。[参考文档](http://compass-style.org/reference/compass/typography/)
 > **hover-link**
 ```sass
 @mixin hover-link {
@@ -364,7 +365,37 @@ $browser-minimum-versions:("ie":"8");
 
 <br>
 
+
+
 <h6 id="utilities模块">utilities模块</h6>
-函数模块，与helper不同的是主要是mixin。[参考文档]()
+函数模块，与helper不同的是主要是mixin。[参考文档](http://compass-style.org/reference/compass/utilities/)
+
+> **legacy-pie-clearfix**`清除浮动`
+```css
+div:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+	visibility: hidden;
+}
+```
 
 <br>
+
+**sprite功能使用**
+```sass
+/*将file文件夹下所有png合为一张图*/
+@import "file/*.png";
+
+/*url自动定位,filename只取最后一个路径的名字*/
+@include all-[filename]-sprites();
+
+/*使用背景图,class名在编译后的css文件里找*/
+<div class="图片class名"></div>
+
+/*使用同一个背景图片*/
+@include logo-sprite("图片class名(不用加.)");
+```
+> 如有hover修饰，在对应图片名后加上_hover或_active即可

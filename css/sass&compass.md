@@ -228,7 +228,7 @@ div {
 
 
 <h6 id="注释"> ·注释</h6>
-//不会被编译，/**/会被编译  	  
+//不会被编译，\/\*\*\/会被编译 	  
 
 <br>
 
@@ -240,8 +240,13 @@ div {
 
 <br>
 
-<h2 id="normalize常用语法">normalize常用语法</h2>
-> 注:normalize中只有reset和layput是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可
+<h2 id="compass常用语法">compass常用语法</h2>
+> 注:compass中只有reset和layput是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可
+
+> 引用normalize，config.rb文件2行加入
+```ruby
+require 'compass-normalize'
+```
 
 <br>
 
@@ -258,22 +263,25 @@ div {
 
 <br>
 
-<h6 id="模块">模块</h6>
-``
+<h6 id="css3模块">css3模块</h6>
+`跨浏览器的css3能力`
 
 <br>
 
-<h6 id="模块">模块</h6>
-``
+<h6 id="helpers模块">helpers模块</h6>
+`函数模块`
 
 <br>
 
-<h6 id="模块">模块</h6>
-``
+<h6 id="typography模块">typography模块</h6>
+`主要修饰文本样式`
 
 <br>
 
-<h6 id="模块">模块</h6>
-``
+<h6 id="utilities模块">utilities模块</h6>
+‘函数模块，与helper不同的是主要是mixin’
 
 <br>
+
+<h6 id="browser模块">browser模块</h6>
+‘配置compass默认支持哪些浏览器’

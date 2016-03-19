@@ -320,6 +320,8 @@ $browser-minimum-versions:("ie":"8");
 跨浏览器的css3能力。[参考文档](http://compass-style.org/reference/compass/css3/animation/)
 
 **使用方法：**`@include box-shadow(1px 1px 5px rgba(0,0,0,.5));`
+
+
 | 常用支持属性 | 备注    |
 | :------------- | :------------- |
 | animation       |        |

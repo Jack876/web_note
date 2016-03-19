@@ -228,7 +228,7 @@ div {
 
 
 <h6 id="注释"> ·注释</h6>
-//不会被编译，\/\*\*\/会被编译 	  
+//不会被编译，/\*\*/会被编译 	  
 
 <br>
 
@@ -241,7 +241,7 @@ div {
 <br>
 
 <h2 id="compass常用语法">compass常用语法</h2>
-> 注:compass中只有reset和layput是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可
+> 注:compass中只有reset和layput是要单独引用的，如 @import "compass/reset"  @import "compass/layout"。其他5大模块引用@import "compass"即可;
 
 > 引用normalize，config.rb文件2行加入
 ```ruby

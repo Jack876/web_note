@@ -11,7 +11,7 @@
 	+ [继承](#继承)
 	+ [占位符%](#占位符%)
 	+ [注意事项](#混合宏 VS 继承 VS 占位符)
-- [normalize常用语法](#normalize常用语法)
+- [compass常用语法](#compass常用语法)
 	+ [reset模块](#reset模块)
 	+ [layput模块](#layput模块)
 	+ [browser模块](#browser模块)

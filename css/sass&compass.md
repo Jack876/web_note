@@ -261,7 +261,7 @@ require 'compass-normalize'
 
 <br>
 
-<h6 id="layout模块">layput模块</h6>
+<h6 id="layout模块">layout模块</h6>
 页面布局模块。[参考文档](http://compass-style.org/reference/compass/layout/)
 > **stretch($top, $right, $bottom, $left)**  `默认值:(0,0,0,0)`
 ```css

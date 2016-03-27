@@ -30,7 +30,7 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 <br>
 
 <h3 id="使用">2.使用</h3>
-> 项目根目录下新建fis3配置文件，格式参考：
+> 项目根目录下新建fis3配置文件(fis-conf.js)，格式参考：
 
 ```javascript
 // 所有的文件产出到 static/ 目录下

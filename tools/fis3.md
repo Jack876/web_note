@@ -33,49 +33,29 @@ cnpm代替npm安装淘宝镜像： npm install -g cnpm --registry=https://regist
 > 项目根目录下新建fis3配置文件(fis-conf.js)，格式参考：
 
 ```javascript
-// 所有的文件产出到 static/ 目录下
-fis.match('*', {
-    release: '/static/$0'
-});
 
 // 所有模板放到 tempalte 目录下
 fis.match('*.html', {
     release: '/template/$0'
 });
 
-// widget源码目录下的资源被标注为组件
-fis.match('/widget/**/*', {
-    isMod: true
-});
+// js文件压缩
+fis.match('*.js', {
+    optimizer: fis.plugin('uglify-js', {
+        mangle: {
+            expect: ['require', 'define', 'some string'] //不想被压的
+        }
+    })
+})
 
-// widget下的 js 调用 jswrapper 进行自动化组件化封装
-fis.match('/widget/**/*.js', {
-    postprocessor: fis.plugin('jswrapper', {
-        type: 'commonjs'
+// css文件压缩
+fis.media('prod').match('*.css', {
+    optimizer: fis.plugin('clean-css', {
+        'keepBreaks': true //保持一个规则一个换行
     })
 });
 
-// test 目录下的原封不动产出到 test 目录下
-fis.match('/test/**/*', {
-    release: '$0'
-});
-
-// optimize
-fis.media('prod')
-    .match('*.js', {
-        optimizer: fis.plugin('uglify-js', {
-            mangle: {
-                expect: ['require', 'define', 'some string'] //不想被压的
-            }
-        })
-    })
-    .match('*.css', {
-        optimizer: fis.plugin('clean-css', {
-            'keepBreaks': true //保持一个规则一个换行
-        })
-    });
-
-  // pack
+// 自定义打包方法
 fis.media('prod')
     // 启用打包插件，必须匹配 ::package
     .match('::package', {
@@ -116,7 +96,7 @@ fis.media('prod')
 <table>
   <tbody>
     <tr>
-      <td>fis3 release <media></td>
+      <td>fis3 release [media]</td>
       <td>编译时使用media的配置来编译文件</td>
     </tr>
     <tr>

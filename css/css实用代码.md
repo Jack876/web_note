@@ -65,7 +65,7 @@
 	p {
 		white-space: nowrap;
 		overflow:hidden;				
-		overflow: ellipsis; 			/* 使用省略号 */
+		text-overflow: ellipsis; 			/* 使用省略号 */
 	}				
 ```
 <br>
